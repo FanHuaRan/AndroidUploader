@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.componets;
+package fhr.com.androiduploader.models;
 
 /**
  * 上传文件
@@ -8,7 +8,7 @@ package fhr.com.androiduploader.componets;
 public class UploadFile {
     /**
      * 文件编号
-     */
+    */
     private final  String fileId;
     /**
      * 本地文件路径
@@ -25,6 +25,10 @@ public class UploadFile {
 
     /**
      * constructor
+     * @param fileId
+     * @param filePath
+     * @param name
+     * @param size
      */
     public UploadFile(String fileId, String filePath, String name, int size) {
         this.fileId = fileId;

@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.componets;
+package fhr.com.androiduploader.models;
 
 import fhr.com.androiduploader.core.AndroidUploader;
 
@@ -28,14 +28,20 @@ public class Picker {
 
     /**
      * full constructor
+     * @param id
+     * @param multiple
+     * @param lable
      */
     public  Picker(String id,boolean multiple,String lable){
         this.id=id;
         this.multiple=multiple;
         this.lable=lable;
     }
+
     /**
      * less constructor
+     * @param id
+     * @param lable
      */
     public  Picker(String id,String lable){
         this(id,true, lable);

@@ -96,7 +96,7 @@ public class AndroidUploader {
     public  static  AndroidUploader createUploader() {
         return  null;
     }
-    /********************监听器挂接卸载处理，可以针对每个监听器集合单独写方法，也可以写一个总的，根据类型查询进行自动添加卸载************************/
+    /********************监听器挂接卸载处理************************/
     public  void addErrorListener(ErrorListener errorListener){
         this.errorListeners.add(errorListener);
     }
@@ -108,12 +108,5 @@ public class AndroidUploader {
     }
     public  void removeUploadSuccessrListener(UploadSuccessListener successListener){
         this.uploadSuccessListeners.remove(successListener);
-    }
-    public  void addListener(UploaderListener listener){
-        if(listener instanceof  ErrorListener) {
-            this.errorListeners.add((ErrorListener)listener);
-        }else if(listener instanceof UploadCompleteListener){
-            this.uploadSuccessListeners.add((UploadSuccessListener)listener);
-        }
     }
 }

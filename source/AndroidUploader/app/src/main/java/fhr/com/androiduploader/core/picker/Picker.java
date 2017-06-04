@@ -1,9 +1,9 @@
-package fhr.com.androiduploader.models;
+package fhr.com.androiduploader.core.picker;
 
 import fhr.com.androiduploader.core.AndroidUploader;
 
 /**
- * 文件选择按钮封装
+ * 文件选择按钮
  * Created by fhr on 2017/6/1.
  */
 

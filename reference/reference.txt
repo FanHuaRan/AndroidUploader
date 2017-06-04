@@ -1,0 +1,7 @@
+webuploader API:http://fex.baidu.com/webuploader/doc/#WebUploader_Uploader_md5File
+利用AsyncHttpClient实现图片的上传与下载：http://blog.csdn.net/xinzheng_wang/article/details/38925731
+Android文件三种上传方式总结：http://blog.csdn.net/anan890624/article/details/52510299
+Android okHttp网络请求之文件上传下载：http://www.cnblogs.com/whoislcj/p/5529827.html
+Android 网络编程使用httpClient批量上传文件并监听进度：http://blog.csdn.net/love_xsq/article/details/49050077
+http上传文件和进度监控以及构造multipart/form-data请求：http://blog.csdn.net/laike1355/article/details/50848416
+Android OkHttp文件上传与下载的进度监听扩展：http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0904/3416.html

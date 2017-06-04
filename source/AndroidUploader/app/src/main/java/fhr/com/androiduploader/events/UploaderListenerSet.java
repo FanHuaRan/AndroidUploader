@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.core;
+package fhr.com.androiduploader.events;
 
 import java.util.HashSet;
 

@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.core;
+package fhr.com.androiduploader.types;
 
 /**
  * uploader总的错误类型

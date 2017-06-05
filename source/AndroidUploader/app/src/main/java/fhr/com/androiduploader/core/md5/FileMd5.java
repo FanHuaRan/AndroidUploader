@@ -9,5 +9,5 @@ import fhr.com.androiduploader.models.UploadFile;
  */
 
 public interface FileMd5 {
-     String computeTotalMd5(UploadFile uploadFile);
+     String computeTotalMd5(UploadFile uploadFile) throws Exception;
 }

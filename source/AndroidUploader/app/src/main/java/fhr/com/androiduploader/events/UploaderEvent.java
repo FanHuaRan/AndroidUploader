@@ -1,5 +1,8 @@
 package fhr.com.androiduploader.events;
 
+import org.apache.http.client.HttpClient;
+
+import java.net.HttpURLConnection;
 import java.util.EventObject;
 
 import fhr.com.androiduploader.core.AndroidUploader;
@@ -13,6 +16,9 @@ public abstract class UploaderEvent extends EventObject {
 
     public UploaderEvent(AndroidUploader uploader){
         super(uploader);
+        HttpClient client=null;
+//        HttpURLConnection urlConnection=null;
+//        urlConnection.setChunkedStreamingMode();
     }
 
     @Override

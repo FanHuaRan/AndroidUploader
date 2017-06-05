@@ -36,4 +36,20 @@ public class UploadFile {
         this.name = name;
         this.size = size;
     }
+
+    public String getFileId() {
+        return fileId;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getSize() {
+        return size;
+    }
 }

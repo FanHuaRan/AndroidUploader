@@ -1,7 +1,7 @@
 package fhr.com.androiduploader.events.eventobjects;
 
 import fhr.com.androiduploader.core.AndroidUploader;
-import fhr.com.androiduploader.core.ErrorType;
+import fhr.com.androiduploader.types.ErrorType;
 import fhr.com.androiduploader.events.UploaderEvent;
 
 /**

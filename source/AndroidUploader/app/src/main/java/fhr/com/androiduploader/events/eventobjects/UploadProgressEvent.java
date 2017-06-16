@@ -18,6 +18,7 @@ public class UploadProgressEvent extends UploaderEvent {
      * 上传进度
      */
     private final int percentage;
+
     public UploadProgressEvent(AndroidUploader uploader,UploadFile file,int percentage) {
         super(uploader);
         this.file = file;

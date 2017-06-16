@@ -27,4 +27,8 @@ public class FileList extends Vector<UploadFile> {
         this.uploader=uploader;
         this.totalSize=0;
     }
+
+    public int getTotalSize() {
+        return totalSize;
+    }
 }

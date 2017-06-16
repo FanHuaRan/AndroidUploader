@@ -1,0 +1,36 @@
+package pers.fhr.fileuploadsite.servlets;
+
+import java.util.Enumeration;
+import java.util.Map;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet(urlPatterns="/upload")
+public class UploadServlet extends HttpServlet {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4718164761047989854L;
+	
+	@Override
+	public void doGet(HttpServletRequest request,HttpServletResponse response){
+		//nothing
+	}
+	
+	@SuppressWarnings("unused")
+	@Override
+	public void doPost(HttpServletRequest request,HttpServletResponse response){
+		//nothing
+		String contentType=request.getContentType();
+		Map<String, String[]> paramsMap=request.getParameterMap();
+        Enumeration<String> keys = request.getParameterNames();  
+//		MultipartHttpServletRequest mhs = (MultipartHttpServletRequest) request;
+//		List<MultipartFile> filelist = mhs.getFiles("PICS");//图片列表
+//		String title = mhs.getParameter("TITLE");
+	}
+	
+}

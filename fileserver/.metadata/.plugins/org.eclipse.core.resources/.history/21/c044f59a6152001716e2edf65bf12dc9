@@ -1,0 +1,8 @@
+package pers.fhr.fileuploadsite.servlets;
+
+import javax.servlet.annotation.WebServlet;
+
+@WebServlet(urlPatterns="/upload")
+public class UploadServlet {
+	
+}

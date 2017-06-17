@@ -1,6 +1,6 @@
-package fhr.com.androiduploader.models;
+package com.fhr.androiduploader.models;
 
-import fhr.com.androiduploader.types.FileStatus;
+import com.fhr.androiduploader.types.FileStatus;
 
 /**
  * 上传文件

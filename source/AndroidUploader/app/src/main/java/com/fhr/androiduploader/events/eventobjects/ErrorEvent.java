@@ -1,8 +1,8 @@
-package fhr.com.androiduploader.events.eventobjects;
+package com.fhr.androiduploader.events.eventobjects;
 
-import fhr.com.androiduploader.core.AndroidUploader;
-import fhr.com.androiduploader.types.ErrorType;
-import fhr.com.androiduploader.events.UploaderEvent;
+import com.fhr.androiduploader.core.AndroidUploader;
+import com.fhr.androiduploader.types.ErrorType;
+import com.fhr.androiduploader.events.UploaderEvent;
 
 /**
  * Uploader控件发生总的校验错误 事件

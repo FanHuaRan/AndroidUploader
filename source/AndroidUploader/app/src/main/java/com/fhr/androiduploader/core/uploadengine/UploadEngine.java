@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.core.uploadengine;
+package com.fhr.androiduploader.core.uploadengine;
 
 /**
  * 文件上传组件接口

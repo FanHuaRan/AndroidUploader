@@ -1,7 +1,7 @@
-package fhr.com.androiduploader.events.listeners;
+package com.fhr.androiduploader.events.listeners;
 
-import fhr.com.androiduploader.events.UploaderListener;
-import fhr.com.androiduploader.events.eventobjects.FileDequeuedEvent;
+import com.fhr.androiduploader.events.UploaderListener;
+import com.fhr.androiduploader.events.eventobjects.FileDequeuedEvent;
 
 /**
  * Created by fhr on 2017/6/2.

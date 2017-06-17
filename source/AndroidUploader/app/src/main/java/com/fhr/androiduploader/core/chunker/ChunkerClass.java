@@ -1,11 +1,12 @@
-package fhr.com.androiduploader.core.chunker;
+package com.fhr.androiduploader.core.chunker;
+
+
+import com.fhr.androiduploader.core.AndroidUploader;
+import com.fhr.androiduploader.models.UploadFile;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.RandomAccessFile;
-
-import fhr.com.androiduploader.core.AndroidUploader;
-import fhr.com.androiduploader.models.UploadFile;
 
 /**
  * 文件切片实现
@@ -39,7 +40,7 @@ public class ChunkerClass implements Chunker {
      */
     @Override
     public int computeChunks(UploadFile uploadFile){
-        int chunks=uploadFile.getSize()/chunkedSize;
+        int chunks=(int)uploadFile.getSize()/chunkedSize;
         if(uploadFile.getSize()%chunkedSize!=0){
             chunks++;
         }

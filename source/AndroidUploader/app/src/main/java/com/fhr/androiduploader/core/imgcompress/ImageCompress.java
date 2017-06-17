@@ -1,9 +1,8 @@
-package fhr.com.androiduploader.core.imgcompress;
+package com.fhr.androiduploader.core.imgcompress;
 
 import android.graphics.drawable.Drawable;
 
-import fhr.com.androiduploader.events.UploaderEvent;
-import fhr.com.androiduploader.models.UploadFile;
+import com.fhr.androiduploader.models.UploadFile;
 
 /**
  * 图片压缩接口

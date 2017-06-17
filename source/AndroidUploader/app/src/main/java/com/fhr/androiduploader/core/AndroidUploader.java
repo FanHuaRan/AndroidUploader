@@ -1,46 +1,46 @@
-package fhr.com.androiduploader.core;
+package com.fhr.androiduploader.core;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import fhr.com.androiduploader.core.chunker.Chunker;
-import fhr.com.androiduploader.core.imgcompress.ImageCompress;
-import fhr.com.androiduploader.core.picker.Picker;
-import fhr.com.androiduploader.core.uploadengine.UploadEngine;
-import fhr.com.androiduploader.events.UploaderListenerSet;
-import fhr.com.androiduploader.events.eventobjects.BeforeFileQueuedEvent;
-import fhr.com.androiduploader.events.eventobjects.ErrorEvent;
-import fhr.com.androiduploader.events.eventobjects.FileDequeuedEvent;
-import fhr.com.androiduploader.events.eventobjects.FileQueuedEvent;
-import fhr.com.androiduploader.events.eventobjects.FilesQueuedEvent;
-import fhr.com.androiduploader.events.eventobjects.ResetEvent;
-import fhr.com.androiduploader.events.eventobjects.StartUploadEvent;
-import fhr.com.androiduploader.events.eventobjects.StopUploadEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadCompleteEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadErrorEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadFinishedEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadProgressEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadStartEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadSuccessEvent;
-import fhr.com.androiduploader.events.listeners.BeforeFileQueuedListener;
-import fhr.com.androiduploader.events.listeners.ErrorListener;
-import fhr.com.androiduploader.events.listeners.FileDequeuedListener;
-import fhr.com.androiduploader.events.listeners.FileQueuedListener;
-import fhr.com.androiduploader.events.listeners.FilesQueuedListener;
-import fhr.com.androiduploader.events.listeners.ResetListener;
-import fhr.com.androiduploader.events.listeners.StartUploadListener;
-import fhr.com.androiduploader.events.listeners.StopUploadListener;
-import fhr.com.androiduploader.events.listeners.UploadCompleteListener;
-import fhr.com.androiduploader.events.listeners.UploadErrorListener;
-import fhr.com.androiduploader.events.listeners.UploadFinishedListener;
-import fhr.com.androiduploader.events.listeners.UploadProgressListener;
-import fhr.com.androiduploader.events.listeners.UploadStartListener;
-import fhr.com.androiduploader.events.listeners.UploadSuccessListener;
-import fhr.com.androiduploader.models.FileList;
-import fhr.com.androiduploader.models.UploadFile;
-import fhr.com.androiduploader.types.FileStatus;
+import com.fhr.androiduploader.core.chunker.Chunker;
+import com.fhr.androiduploader.core.imgcompress.ImageCompress;
+import com.fhr.androiduploader.core.picker.Picker;
+import com.fhr.androiduploader.core.uploadengine.UploadEngine;
+import com.fhr.androiduploader.events.UploaderListenerSet;
+import com.fhr.androiduploader.events.eventobjects.BeforeFileQueuedEvent;
+import com.fhr.androiduploader.events.eventobjects.ErrorEvent;
+import com.fhr.androiduploader.events.eventobjects.FileDequeuedEvent;
+import com.fhr.androiduploader.events.eventobjects.FileQueuedEvent;
+import com.fhr.androiduploader.events.eventobjects.FilesQueuedEvent;
+import com.fhr.androiduploader.events.eventobjects.ResetEvent;
+import com.fhr.androiduploader.events.eventobjects.StartUploadEvent;
+import com.fhr.androiduploader.events.eventobjects.StopUploadEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadCompleteEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadErrorEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadFinishedEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadProgressEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadStartEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadSuccessEvent;
+import com.fhr.androiduploader.events.listeners.BeforeFileQueuedListener;
+import com.fhr.androiduploader.events.listeners.ErrorListener;
+import com.fhr.androiduploader.events.listeners.FileDequeuedListener;
+import com.fhr.androiduploader.events.listeners.FileQueuedListener;
+import com.fhr.androiduploader.events.listeners.FilesQueuedListener;
+import com.fhr.androiduploader.events.listeners.ResetListener;
+import com.fhr.androiduploader.events.listeners.StartUploadListener;
+import com.fhr.androiduploader.events.listeners.StopUploadListener;
+import com.fhr.androiduploader.events.listeners.UploadCompleteListener;
+import com.fhr.androiduploader.events.listeners.UploadErrorListener;
+import com.fhr.androiduploader.events.listeners.UploadFinishedListener;
+import com.fhr.androiduploader.events.listeners.UploadProgressListener;
+import com.fhr.androiduploader.events.listeners.UploadStartListener;
+import com.fhr.androiduploader.events.listeners.UploadSuccessListener;
+import com.fhr.androiduploader.models.FileList;
+import com.fhr.androiduploader.models.UploadFile;
+import com.fhr.androiduploader.types.FileStatus;
 
 /**
  * 上传控件核心 工厂模式进行创建
@@ -82,17 +82,9 @@ public class AndroidUploader {
     private final FileList fileList;
     /***************************组件********************************************/
     /**
-     * 主要的文件选择按钮
+     * 文件选择按钮集合
      */
-    private Picker picker;
-    /**
-     * 更多的文件选择按钮
-     */
-    private final List<Picker> button=new ArrayList<>();
-    /**
-     * 分片组件
-     */
-    private final Chunker chunker=null;
+    private final List<Picker> pickers=new ArrayList<>();
     /**
      * 图片压缩组件
      */
@@ -105,8 +97,68 @@ public class AndroidUploader {
      * 上传表单数据
      */
     private Map<String,Object> formData=null;
+    /**
+     * constructor
+     * @param server
+     * @param chunked
+     * @param chunkedSize
+     * @param thread
+     * @param fileNumLimit
+     * @param fileSizeLimit
+     * @param fileSingleSizeLimit
+     */
+    public AndroidUploader(String server, boolean chunked, int chunkedSize, int thread, int fileNumLimit, int fileSizeLimit, int fileSingleSizeLimit, Picker picker,Map<String,Object> formData) {
+        this.server = server;
+        this.chunked = chunked;
+        this.chunkedSize = chunkedSize;
+        this.thread = thread;
+        this.fileNumLimit = fileNumLimit;
+        this.fileSizeLimit = fileSizeLimit;
+        this.fileSingleSizeLimit = fileSingleSizeLimit;
+        this.pickers.add(picker);
+        this.formData=formData;
+        this.fileList=new FileList(this);
+    }
+    /**
+     * 开始上传
+     */
+    public  void upload(){
+        //激发上传事件
+        fireStartUpload(new StartUploadEvent(this,this.fileList.size(),this.fileList.getTotalSize()));
+    }
 
-    /***************************事件监听器**************************************/
+    /**
+     * 添加文件
+     * @param file
+     */
+    public synchronized void addFile(File file){
+        int fileCount=this.fileList.size();
+        UploadFile uploadFile=new UploadFile(String.format("file-%d",fileCount+1),file.getPath(),file.getName(),file.length());
+        //触发入队前事件
+        this.fireBeforeFileQueued(new BeforeFileQueuedEvent(this,uploadFile));
+        this.fileList.add(uploadFile);
+        //触发入队后事件
+        this.fireFileQueued(new FileQueuedEvent(this,uploadFile));
+        uploadFile.setFileStatus(FileStatus.QUEUED);
+    }
+
+    /**
+     * 移除文件
+     * @param fileId
+     */
+    public  void removeFile(String fileId){
+        UploadFile uploadFile=this.fileList.removeByFileId(fileId);
+        if(uploadFile!=null){
+            uploadFile.setFileStatus(FileStatus.CANCELLED);
+            this.fireFileDequeued(new FileDequeuedEvent(this,uploadFile));
+        }
+    }
+
+    public void reset(){
+
+    }
+
+    /***************************事件监听器集合**************************************/
     /**
      * 文件入队前的监听器集合
      */
@@ -163,67 +215,6 @@ public class AndroidUploader {
      * 上传成功事件监听器集合
      */
     private final UploaderListenerSet<UploadSuccessListener> uploadSuccessListeners=new UploaderListenerSet<>();
-
-    /**
-     * constructor
-     * @param server
-     * @param chunked
-     * @param chunkedSize
-     * @param thread
-     * @param fileNumLimit
-     * @param fileSizeLimit
-     * @param fileSingleSizeLimit
-     * @param picker
-     */
-    public AndroidUploader(String server, boolean chunked, int chunkedSize, int thread, int fileNumLimit, int fileSizeLimit, int fileSingleSizeLimit, Picker picker,Map<String,Object> formData) {
-        this.server = server;
-        this.chunked = chunked;
-        this.chunkedSize = chunkedSize;
-        this.thread = thread;
-        this.fileNumLimit = fileNumLimit;
-        this.fileSizeLimit = fileSizeLimit;
-        this.fileSingleSizeLimit = fileSingleSizeLimit;
-        this.picker = picker;
-        this.formData=formData;
-        this.fileList=new FileList(this);
-    }
-
-    /**
-     * 开始上传
-     */
-    public  void upload(){
-        //激发上传事件
-        fireStartUpload(new StartUploadEvent(this,this.fileList.size(),this.fileList.getTotalSize()));
-    }
-
-    /**
-     * 添加文件
-     * @param file
-     */
-    public synchronized void addFile(File file){
-        int fileCount=this.fileList.size();
-        UploadFile uploadFile=new UploadFile(String.format("file-%d",fileCount+1),file.getPath(),file.getName(),file.length());
-        //触发入队前事件
-        this.fireBeforeFileQueued(new BeforeFileQueuedEvent(this,uploadFile));
-        this.fileList.add(uploadFile);
-        //触发入队后事件
-        this.fireFileQueued(new FileQueuedEvent(this,uploadFile));
-        uploadFile.setFileStatus(FileStatus.QUEUED);
-    }
-
-    /**
-     * 移除文件
-     * @param fileId
-     */
-    public  void removeFile(String fileId){
-        UploadFile uploadFile=this.fileList.removeByFileId(fileId);
-        if(uploadFile!=null){
-            uploadFile.setFileStatus(FileStatus.CANCELLED);
-            this.fireFileDequeued(new FileDequeuedEvent(this,uploadFile));
-        }
-    }
-
-
 
     /********************监听器挂接卸载处理************************/
 

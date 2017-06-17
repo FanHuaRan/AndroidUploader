@@ -1,28 +1,30 @@
-package fhr.com.androiduploader.core;
+package com.fhr.androiduploader.core;
 
+import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;
+
+import com.fhr.androiduploader.events.eventobjects.StartUploadEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadCompleteEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadErrorEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadFinishedEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadProgressEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadStartEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadSuccessEvent;
+import com.fhr.androiduploader.events.listeners.StartUploadListener;
+import com.fhr.androiduploader.events.listeners.UploadCompleteListener;
+import com.fhr.androiduploader.events.listeners.UploadErrorListener;
+import com.fhr.androiduploader.events.listeners.UploadFinishedListener;
+import com.fhr.androiduploader.events.listeners.UploadProgressListener;
+import com.fhr.androiduploader.events.listeners.UploadStartListener;
+import com.fhr.androiduploader.events.listeners.UploadSuccessListener;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
-import fhr.com.androiduploader.events.eventobjects.StartUploadEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadCompleteEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadErrorEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadFinishedEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadProgressEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadStartEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadSuccessEvent;
-import fhr.com.androiduploader.events.listeners.StartUploadListener;
-import fhr.com.androiduploader.events.listeners.UploadCompleteListener;
-import fhr.com.androiduploader.events.listeners.UploadErrorListener;
-import fhr.com.androiduploader.events.listeners.UploadFinishedListener;
-import fhr.com.androiduploader.events.listeners.UploadProgressListener;
-import fhr.com.androiduploader.events.listeners.UploadStartListener;
-import fhr.com.androiduploader.events.listeners.UploadSuccessListener;
 
 /**
  * androiduploader单元测试

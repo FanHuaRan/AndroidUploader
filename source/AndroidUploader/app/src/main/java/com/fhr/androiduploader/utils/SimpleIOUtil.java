@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.utils;
+package com.fhr.androiduploader.utils;
 
 import java.io.Closeable;
 

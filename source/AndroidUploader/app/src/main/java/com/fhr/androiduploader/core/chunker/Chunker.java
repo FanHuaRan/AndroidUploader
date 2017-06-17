@@ -1,9 +1,9 @@
-package fhr.com.androiduploader.core.chunker;
+package com.fhr.androiduploader.core.chunker;
+
+import com.fhr.androiduploader.models.UploadFile;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import fhr.com.androiduploader.models.UploadFile;
 
 /**
  * 文件切片接口

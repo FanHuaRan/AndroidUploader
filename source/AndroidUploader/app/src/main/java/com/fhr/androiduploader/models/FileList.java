@@ -1,16 +1,16 @@
-package fhr.com.androiduploader.models;
+package com.fhr.androiduploader.models;
+
+import com.fhr.androiduploader.core.AndroidUploader;
 
 import java.util.Collection;
 import java.util.Vector;
-
-import fhr.com.androiduploader.core.AndroidUploader;
 
 /**
  * 文件集合 线程安全
  * Created by fhr on 2017/6/1.
  */
 
-public class FileList extends Vector<UploadFile> {
+public class FileList extends Vector<com.fhr.androiduploader.models.UploadFile> {
     /**
      * 文件总大小
      */

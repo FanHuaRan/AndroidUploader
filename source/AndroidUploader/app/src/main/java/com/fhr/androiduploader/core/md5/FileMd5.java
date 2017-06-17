@@ -1,7 +1,6 @@
-package fhr.com.androiduploader.core.md5;
+package com.fhr.androiduploader.core.md5;
 
-import fhr.com.androiduploader.events.UploaderEvent;
-import fhr.com.androiduploader.models.UploadFile;
+import com.fhr.androiduploader.models.UploadFile;
 
 /**
  * 文件MD5计算接口

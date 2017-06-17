@@ -1,8 +1,7 @@
-package fhr.com.androiduploader.events.eventobjects;
+package com.fhr.androiduploader.events.eventobjects;
 
-import fhr.com.androiduploader.core.AndroidUploader;
-import fhr.com.androiduploader.events.UploaderEvent;
-import fhr.com.androiduploader.models.UploadFile;
+import com.fhr.androiduploader.core.AndroidUploader;
+import com.fhr.androiduploader.events.UploaderEvent;
 
 /**
  * uploader重置事件

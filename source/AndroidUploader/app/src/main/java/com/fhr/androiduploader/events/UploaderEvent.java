@@ -1,11 +1,10 @@
-package fhr.com.androiduploader.events;
+package com.fhr.androiduploader.events;
+
+import com.fhr.androiduploader.core.AndroidUploader;
 
 import org.apache.http.client.HttpClient;
 
-import java.net.HttpURLConnection;
 import java.util.EventObject;
-
-import fhr.com.androiduploader.core.AndroidUploader;
 
 /**
  * Android Uploader事件抽象基类

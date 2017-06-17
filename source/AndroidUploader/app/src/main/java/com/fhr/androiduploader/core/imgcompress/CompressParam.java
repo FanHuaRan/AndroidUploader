@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.core.imgcompress;
+package com.fhr.androiduploader.core.imgcompress;
 
 /**
  * 压缩参数

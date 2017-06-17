@@ -1,6 +1,6 @@
-package fhr.com.androiduploader.core.picker;
+package com.fhr.androiduploader.core.picker;
 
-import fhr.com.androiduploader.core.AndroidUploader;
+import com.fhr.androiduploader.core.AndroidUploader;
 
 /**
  * 文件选择按钮

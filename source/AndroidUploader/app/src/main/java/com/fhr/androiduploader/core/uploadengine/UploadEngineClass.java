@@ -1,5 +1,6 @@
-package fhr.com.androiduploader.core.uploadengine;
+package com.fhr.androiduploader.core.uploadengine;
 
+import com.fhr.androiduploader.core.uploadengine.UploadEngine;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -24,7 +25,7 @@ import fhr.com.androiduploader.models.UploadFile;
  * Created by fhr on 2017/6/4.
  */
 
-public class UploadEngineClass implements  UploadEngine {
+public class UploadEngineClass implements UploadEngine {
 
     //文件处理游标
     private AtomicInteger cursor = null;

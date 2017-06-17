@@ -1,4 +1,4 @@
-package fhr.com.androiduploader.types;
+package com.fhr.androiduploader.types;
 
 /**
  * 文件状态

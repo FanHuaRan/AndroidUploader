@@ -1,7 +1,7 @@
-package fhr.com.androiduploader.events.eventobjects;
+package com.fhr.androiduploader.events.eventobjects;
 
-import fhr.com.androiduploader.core.AndroidUploader;
-import fhr.com.androiduploader.events.UploaderEvent;
+import com.fhr.androiduploader.core.AndroidUploader;
+import com.fhr.androiduploader.events.UploaderEvent;
 
 /**
  * 开始上传流程事件，非单个文件上传

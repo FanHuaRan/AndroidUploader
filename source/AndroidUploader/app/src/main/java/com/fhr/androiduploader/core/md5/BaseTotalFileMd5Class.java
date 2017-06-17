@@ -1,9 +1,9 @@
-package fhr.com.androiduploader.core.md5;
+package com.fhr.androiduploader.core.md5;
+
+import com.fhr.androiduploader.models.UploadFile;
+import com.fhr.androiduploader.utils.Md5Util;
 
 import java.io.File;
-
-import fhr.com.androiduploader.models.UploadFile;
-import fhr.com.androiduploader.utils.Md5Util;
 
 /**
  * 总文件的MD5计算实现

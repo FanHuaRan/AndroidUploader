@@ -27,9 +27,7 @@ public class Md5Util {
      * @throws NoSuchAlgorithmException
      */
     public  static  String computeFileMd5(File file) throws IOException, NoSuchAlgorithmException {
-        FileInputStream fis=null;
-        try {
-             fis = new FileInputStream(file);
+        try (FileInputStream fis = new FileInputStream(file)) {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] buffer = new byte[BUFFER_SIZE];
             int length = -1;
@@ -37,9 +35,7 @@ public class Md5Util {
                 md.update(buffer, 0, length);
             }
             BigInteger bigInt = new BigInteger(1, md.digest());
-            return  bigInt.toString();
-        }finally {
-            SimpleIOUtil.closeIO(fis);
+            return bigInt.toString();
         }
     }
 

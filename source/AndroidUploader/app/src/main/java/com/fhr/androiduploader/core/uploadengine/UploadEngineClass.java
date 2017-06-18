@@ -1,6 +1,14 @@
 package com.fhr.androiduploader.core.uploadengine;
 
-import com.fhr.androiduploader.core.uploadengine.UploadEngine;
+import com.fhr.androiduploader.core.AndroidUploader;
+import com.fhr.androiduploader.core.chunker.Chunker;
+import com.fhr.androiduploader.core.chunker.ChunkerClass;
+import com.fhr.androiduploader.events.eventobjects.UploadErrorEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadFinishedEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadProgressEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadStartEvent;
+import com.fhr.androiduploader.events.eventobjects.UploadSuccessEvent;
+import com.fhr.androiduploader.models.UploadFile;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -9,16 +17,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
-
-import fhr.com.androiduploader.core.AndroidUploader;
-import fhr.com.androiduploader.core.chunker.Chunker;
-import fhr.com.androiduploader.core.chunker.ChunkerClass;
-import fhr.com.androiduploader.events.eventobjects.UploadErrorEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadFinishedEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadProgressEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadStartEvent;
-import fhr.com.androiduploader.events.eventobjects.UploadSuccessEvent;
-import fhr.com.androiduploader.models.UploadFile;
 
 /**
  * 文件上传组件实现

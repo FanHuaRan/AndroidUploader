@@ -3,6 +3,7 @@ package com.fhr.androiduploader.core;
 import com.fhr.androiduploader.core.imgcompress.ImageCompress;
 import com.fhr.androiduploader.core.picker.Picker;
 import com.fhr.androiduploader.core.uploadengine.UploadEngine;
+import com.fhr.androiduploader.core.uploadengine.UploadEngineClass;
 import com.fhr.androiduploader.events.UploaderListenerSet;
 import com.fhr.androiduploader.events.eventobjects.BeforeFileQueuedEvent;
 import com.fhr.androiduploader.events.eventobjects.ErrorEvent;
@@ -91,7 +92,7 @@ public class AndroidUploader {
     /**
      * 上传组件
      */
-    private  final UploadEngine uploadEngine=null;
+    private  final UploadEngine uploadEngine;
     /**
      * 上传表单数据
      */
@@ -117,6 +118,7 @@ public class AndroidUploader {
         this.pickers.add(picker);
         this.formData=formData;
         this.fileList=new FileList(this);
+        uploadEngine=new UploadEngineClass(this);
     }
     /**
      * 开始上传
@@ -124,6 +126,7 @@ public class AndroidUploader {
     public  void upload(){
         //激发上传事件
         fireStartUpload(new StartUploadEvent(this,this.fileList.size(),this.fileList.getTotalSize()));
+        uploadEngine.startUpload();
     }
 
     /**

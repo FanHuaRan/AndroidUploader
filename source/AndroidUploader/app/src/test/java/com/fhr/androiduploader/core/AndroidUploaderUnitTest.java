@@ -1,7 +1,5 @@
 package com.fhr.androiduploader.core;
 
-import android.util.Log;
-
 import com.fhr.androiduploader.events.eventobjects.StartUploadEvent;
 import com.fhr.androiduploader.events.eventobjects.UploadCompleteEvent;
 import com.fhr.androiduploader.events.eventobjects.UploadErrorEvent;
@@ -23,6 +21,7 @@ import org.junit.Test;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  * androiduploader单元测试
@@ -42,60 +41,72 @@ public class AndroidUploaderUnitTest {
         androidUploader.addStartUploadListener(new StartUploadListener() {
             @Override
             public void HandleEvent(StartUploadEvent event) {
-                Log.i("uploader",String.format("文件开始上传：大小：%d 个数：%d",event.getTotalSize(),event.getTotalCount()));
+               // Log.i("uploader",String.format("文件开始上传：大小：%d 个数：%d",event.getTotalSize(),event.getTotalCount()));
+                System.out.println(String.format("文件开始上传：大小：%d 个数：%d",event.getTotalSize(),event.getTotalCount()));
             }
         });
         //添加结束上传监听器
         androidUploader.addUploadFinishedListener(new UploadFinishedListener() {
             @Override
             public void HandleEvent(UploadFinishedEvent event) {
-                Log.i("uploader",String.format("文件上传结束"));
+                //Log.i("uploader",String.format("文件上传结束"));
+                System.out.println(String.format("文件上传结束"));
             }
         });
         //添加文件进度监听器
         androidUploader.addUploadProgressListener(new UploadProgressListener() {
             @Override
             public void HandleEvent(UploadProgressEvent event) {
-                Log.i("uploader",String.format("%s文件已经上传：%d",event.getFile().getName(),event.getPercentage()));
+               // Log.i("uploader",String.format("%s文件已经上传：%d",event.getFile().getName(),event.getPercentage()));
+                System.out.println(String.format("%s文件已经上传：%d",event.getFile().getName(),event.getPercentage()));
             }
         });
         //单文件开始上传
         androidUploader.addUploadStartListener(new UploadStartListener() {
             @Override
             public void HandleEvent(UploadStartEvent event) {
-                Log.i("uploader",String.format("%s文件开始上传",event.getFile().getName()));
+              //  Log.i("uploader",String.format("%s文件开始上传",event.getFile().getName()));
+                System.out.println(String.format("%s文件开始上传",event.getFile().getName()));
             }
         });
         //单文件上传完成 不论失败与否
         androidUploader.addUploadCompleteListener(new UploadCompleteListener() {
             @Override
             public void HandleEvent(UploadCompleteEvent event) {
-                Log.i("uploader",String.format("%s文件上传完成",event.getFile().getName()));
+               // Log.i("uploader",String.format("%s文件上传完成",event.getFile().getName()));
+                System.out.println(String.format("%s文件上传完成",event.getFile().getName()));
             }
         });
         //单文件上传成功
         androidUploader.addUploadSuccessListener(new UploadSuccessListener() {
             @Override
             public void HandleEvent(UploadSuccessEvent event) {
-                Log.i("uploader",String.format("%s文件上传成功",event.getFile().getName()));
+               // Log.i("uploader",String.format("%s文件上传成功",event.getFile().getName()));
+                System.out.println(String.format("%s文件上传成功",event.getFile().getName()));
             }
         });
         //单文件上传错误
         androidUploader.addUploadErrorListener(new UploadErrorListener() {
             @Override
             public void HandleEvent(UploadErrorEvent event) {
-                Log.e("uploader",String.format("%s文件上传失败",event.getFile().getName(),event.getErrorCode()));
+               // Log.e("uploader",String.format("%s文件上传失败",event.getFile().getName(),event.getErrorCode()));
+                System.out.println(String.format("%s文件上传失败",event.getFile().getName(),event.getErrorCode()));
             }
         });
     }
 
     @Test
     public void upload() throws Exception {
-        File file1=new File("");
-        File file2=new File("");
-        File file3=new File("");
+        File file1=new File("E:\\学习\\201401110121范华燃.xlsx");
+        //File file2=new File("");
+       // File file3=new File("");
         androidUploader.addFile(file1);
         androidUploader.upload();
+        pause();
+    }
+    private void  pause(){
+        Scanner s = new Scanner(System.in);
+        String name = s.nextLine();
     }
 
 }

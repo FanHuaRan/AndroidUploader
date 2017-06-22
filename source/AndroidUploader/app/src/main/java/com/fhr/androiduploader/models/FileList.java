@@ -10,7 +10,7 @@ import java.util.Vector;
  * Created by fhr on 2017/6/1.
  */
 
-public class FileList extends Vector<com.fhr.androiduploader.models.UploadFile> {
+public class FileList extends Vector<UploadFile> {
     /**
      * 文件总大小
      */

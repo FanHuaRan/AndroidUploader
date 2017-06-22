@@ -102,7 +102,7 @@ public class UploadEngineClass implements UploadEngine {
     private UploadFile getNextUploadFile() {
         //获取当前文件索引 incrementAndGet是原子操作
         int currentIndex=cursor.incrementAndGet();
-        if(currentIndex<androidUploader.getFileList().size()-1){
+        if(currentIndex<=androidUploader.getFileList().size()-1){
             return  androidUploader.getFileList().get(currentIndex);
         }else if(currentIndex==androidUploader.getFileList().size()-1){
             //刚好上传完成 触发全部上传结束事件

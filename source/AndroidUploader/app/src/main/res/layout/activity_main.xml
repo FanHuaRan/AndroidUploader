@@ -13,4 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chooseFileBtt"
+        android:text="添加文件"
+        android:onClick="chooseFileHandler"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/uploadBtt"
+        android:text="开始上传"
+        android:onClick="uploadHandler"/>
 </RelativeLayout>

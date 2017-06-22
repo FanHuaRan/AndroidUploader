@@ -33,7 +33,7 @@ public class AndroidUploaderUnitTest {
     private AndroidUploader androidUploader=null;
 
     @Before
-    private void before(){
+    public void before(){
         Map<String,Object> formData=new HashMap<>();
         formData.put("param1","1");
         formData.put("param2","hello2");

@@ -1,11 +1,5 @@
 package com.fhr.androiduploader.core;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import com.fhr.androiduploader.core.chunker.Chunker;
 import com.fhr.androiduploader.core.imgcompress.ImageCompress;
 import com.fhr.androiduploader.core.picker.Picker;
 import com.fhr.androiduploader.core.uploadengine.UploadEngine;
@@ -41,6 +35,11 @@ import com.fhr.androiduploader.events.listeners.UploadSuccessListener;
 import com.fhr.androiduploader.models.FileList;
 import com.fhr.androiduploader.models.UploadFile;
 import com.fhr.androiduploader.types.FileStatus;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 上传控件核心 工厂模式进行创建

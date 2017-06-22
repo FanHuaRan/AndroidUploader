@@ -13,7 +13,7 @@ import java.util.List;
  * Created by fhr on 2017/6/4.
  */
 
-public class BaseSubsectionFileMd5Class implements com.fhr.androiduploader.core.md5.FileMd5 {
+public class BaseSubsectionFileMd5Class implements FileMd5 {
     /**
      * 块数
      */

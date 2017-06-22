@@ -14,5 +14,5 @@ public interface Chunker {
 
     InputStream getChunkData(UploadFile uploadFile, int chunk) throws IOException;
 
-    byte[] getChunDataBytes(UploadFile uploadFile,int chunk) throws IOException;
+    byte[] getChunDataBytes(UploadFile uploadFile, int chunk) throws IOException;
 }
